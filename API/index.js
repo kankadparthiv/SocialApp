@@ -11,15 +11,15 @@ const multer=require("multer")
 const path=require("path")
 dotenv.config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/test").then(()=>{console.log("success")}
-).catch((err)=>{console.error(err)});
-// mongoose.connect(
-//   process.env.MONGO_URL,
-//   { useNewUrlParser: true, useUnifiedTopology: true },
-//   () => {
-//     console.log("Connected to MongoDB");
-//   }
-// );
+// mongoose.connect("mongodb://127.0.0.1:27017/test").then(()=>{console.log("success")}
+// ).catch((err)=>{console.error(err)});
+mongoose.connect(
+  process.env.MONGO_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("Connected to MongoDB");
+  }
+);
 
 //middleware
 app.use("/images",express.static(path.join(__dirname,"public/images")))

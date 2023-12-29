@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 export default function Topbar() {
   const navigate=useNavigate();
 
-  const { user,isFetching, dispatch } = useContext(AuthContext);
+  const { user,dispatch } = useContext(AuthContext);
 
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const handlelogout=(e)=>
@@ -25,7 +25,7 @@ export default function Topbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">Lamasocial</span>
+          <span className="logo">social</span>
         </Link>
       </div>
       <div className="topbarCenter">
@@ -41,7 +41,7 @@ export default function Topbar() {
         <div className="topbarLinks">
           <span className="topbarLink">Homepage</span>
           <span className="topbarLink">Timeline</span>
-          <button onClick={handlelogout}>Logout</button>
+          <button  className="topbarbtn"onClick={handlelogout}>Logout</button>
         </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
